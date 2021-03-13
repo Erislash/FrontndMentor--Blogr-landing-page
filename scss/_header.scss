@@ -1,0 +1,88 @@
+.header {
+    position: relative;
+    background-image: linear-gradient(270deg, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+    background-position: 30% 50%;
+    background-size: 200%;
+
+    height: 100vh;
+
+    border-radius: 0 0 0 100px;
+
+    .nav {
+        display: flex;
+        padding: 2rem;
+        align-items: center;
+        justify-content: space-between;
+
+        &__logo {
+            img {
+                width: 70%;
+            }
+        }
+
+        &__hamburguer {
+
+        }
+
+        &__menu {
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            background-color: #fff;
+            width: 90%;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, .2);
+            border-radius: 5px;
+
+        }
+
+        &__access {
+            width: 80%;
+            border-top: 1px solid hsl(240, 2%, 79%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .hero {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__title{
+            color: #fff;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        &__subtitle {
+            margin: 0 auto;
+            color: #fff;
+            font-weight: 300;
+            text-align: center;
+            width: 75%;
+        }
+
+        &__btn {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 1.6rem;
+        }
+    }
+
+
+}
