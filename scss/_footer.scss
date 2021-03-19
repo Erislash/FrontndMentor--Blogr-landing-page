@@ -2,7 +2,6 @@
     background-color: hsl(240, 10%, 16%);
     border-radius: 0 100px 0 0;
     color: hsl(240, 2%, 79%);
-    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -14,13 +13,10 @@
         margin: 0 auto;
         margin-bottom: 2rem;
         text-align: center;
-
+        cursor: pointer;
         img{
             width: 80%;
         }
-    }
-
-    &__section {
     }
     &__title{
         text-align: center;
@@ -32,7 +28,27 @@
     }
     &__link {
         margin-bottom: .5rem;
+        border-bottom: 1px solid transparent;
+        &:hover{
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            cursor: pointer;
+        }
     }
 
+    @media (min-width: 1000px) {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+
+        &__logo{
+            margin: 0;
+            text-align: center;
+    
+            img{
+                width: 50%;
+            }
+        }
+    }
 
 }

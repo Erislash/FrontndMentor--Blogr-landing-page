@@ -14,10 +14,24 @@
 body {
     background-color: #fff;
     font-family: 'Overpass', Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 ul{
     list-style: none;
+}
+
+img{
+    user-select: none;
+}
+.patternHero {
+    position: absolute;
+    z-index: 0;
+    width: 200%;
+    height: 200%;
+    top: -30%;
+    left: -10%;
+    object-fit: cover;
 }
 
 .btn {
@@ -25,69 +39,156 @@ ul{
     font-weight: 700;
     padding: .8rem 1rem;
     width: 45%;
+    max-width: 200px;
     border-radius: 20px;
     border: 1px solid #fff;
+    cursor: pointer;
 
     &--filled {
         background: #fff;
         color: hsl(356, 100%, 66%);
+        @media (min-width: 1000px) {
+            transition: background-color .3s ease;
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.432);
+            }
+        }
     }
     &--filled--red {
         background: linear-gradient(90deg, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
         color: #fff;
+        @media (min-width: 1000px) {
+            background: #fff;
+            color: hsl(356, 100%, 66%);
+
+            transition: background-color .3s ease;
+
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.432);
+            }
+        }
     }
 
     &--border {
         background: transparent;
         color: #fff;
         border: 1px solid #fff;
+        @media (min-width: 1000px) {
+            transition: all .3s ease;
+            &:hover {
+                background: #fff;
+                color: hsl(356, 100%, 66%);
+            }
+        }
     }
 
     &--unbordered {
         background: transparent;
         color: #fff;
         border: none;
+        
     }
     &--unbordered--blue {
         background: transparent;
         color: hsl(208, 49%, 24%);
         border: none;
+        @media (min-width: 1000px) {
+            color: hsl(240, 2%, 79%);
+
+            &:hover{
+                color: #fff;
+            }
+        }
     }
 }
-
 
 .dropdownItem {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    background-color: #fff;
+    
+    background-color: transparent;
+    cursor: pointer;
     width: 100%;
     text-align: center;
     font-family: 'Overpass', Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: hsl(208, 49%, 24%);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    @media (min-width: 1000px) {
+        width: auto;
+        margin-left: 2rem;
+        
+    }
+    &--unactive > &__links{
+        height: 0 !important;
+        padding: 0;
+        margin: 0;
+    }
+
+    &--unactive > &__header svg {
+        transform: scaleY(1);
+    }
 
     &__header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 1rem;
+        padding: 1rem;
+        transition: all .3s ease;
+        &:hover {
+            color: hsl(240, 2%, 79%);
+        }
+        @media (min-width: 1000px) {
+            padding: 0rem;
+            color: #fff;
+            &:hover {
+                border-bottom: 1px solid rgb(255, 255, 255);
+            }
+        }
+        
         svg {
             stroke: hsl(356, 100%, 66%);
+            margin-left: .5rem;
+            transform: scaleY(-1);
+            @media (min-width: 1000px) {
+                stroke: #fff;
+            }
         }
+
     }
 
     &__links {
-        display: none;
+        display: flex;
         margin: 0 auto;
-        width: 80%;
-        margin-top: .7rem;
+        width: 100%;
         font-size: .8rem;
         flex-direction: column;
         background-color: #f2f2f2;
         padding: 1rem;
+        height: auto;
+        overflow: hidden;
+        
+        @media (min-width: 1000px) {
+            position: absolute;
+            border-radius: 5px;
+            top: 100%;
+            width: 250px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.418);
+        }
+        
+    }
+    &__link {
+        padding: .5rem 0;
+        transition: all .3s ease;
+        
+        &:hover {
+            background-color: #dadada;
+        }
     }
 
-    &__link:not(:last-child) {
-        margin-bottom: .5rem;
-    }
+
 }
 
 
@@ -96,18 +197,30 @@ ul{
     flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
+    @media (min-width: 1000px) {
+        align-items: flex-start;
+    }
     &__title {
         font-size: 1.5rem;
         color: hsl(208, 49%, 24%);
         text-align: center;
         width: 80%;
         margin-bottom: .5rem;
+        @media (min-width: 1000px) {
+            text-align: left;
+            font-size: 2rem;
+        }
     }
     &__body {
         width: 90%;
         text-align: center;
         color: hsl(207, 13%, 34%);
-        font-size: .8rem
+        font-size: .8rem;
+        @media (min-width: 1000px) {
+            text-align: left;
+            font-size: .9rem;
+            line-height: 2;
+        }
     }
 }
 

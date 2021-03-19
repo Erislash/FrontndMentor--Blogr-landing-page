@@ -8,25 +8,29 @@
   
     <link rel="stylesheet" href="./css/style.css">
     <title>Frontend Mentor | [Blogr]</title>
+    <script src="./app.js" defer></script>
 </head>
 <body>
         <header class="header">
+            
             <nav class="nav">
                 <div class="nav__logo imgContainer">
                     <img src="./images/logo.svg" alt="Blogr Logo">
                 </div>
 
                 <div class="nav__hamburguer">
-                    <img src="./images/icon-hamburger.svg" alt="">
+                    <img class="nav__hamburguerIcon" src="./images/icon-hamburger.svg">
+                    <img class="nav__hamburguerClose" src="./images/icon-close.svg">
                 </div>
 
                 <ul class="nav__menu">
 
                     <div class="nav__links">
-                        <li class="dropdownItem">
+                        <li class="dropdownItem dropdownItem--unactive">
                             <div class="dropdownItem__header">Product
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path fill="none" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4"/>
                                 </svg>
+                            </div>
                             <ul class="dropdownItem__links">
                                 <li class="dropdownItem__link">Overview</li>
                                 <li class="dropdownItem__link">Pricing</li>
@@ -36,7 +40,7 @@
                             </ul>
                         </li>
     
-                        <li class="dropdownItem">
+                        <li class="dropdownItem dropdownItem--unactive">
                             <div class="dropdownItem__header">Company
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path fill="none" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4"/>
                                 </svg>
@@ -49,7 +53,7 @@
                             </ul>
                         </li>
     
-                        <li class="dropdownItem">
+                        <li class="dropdownItem dropdownItem--unactive">
                             <div class="dropdownItem__header">Connect
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path fill="none" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4"/>
                                 </svg>
@@ -74,16 +78,18 @@
             </nav>
 
             <div class="hero">
+                <img class="patternHero" src="./images/bg-pattern-intro.svg">
                 <h1 class="hero__quote">
-                    <h2 class="hero__title">A modern<br />publishing platform</h2>
+                    <h2 class="hero__title">A modern publishing platform</h2>
                     <p class="hero__subtitle">Grow your audience and build your online brand</p>
                 </h1>
-
+                
                 <div class="hero__btn">
                     <button class="btn btn--filled">Start For Free</button>
                     <button class="btn btn--border">Learn More</button>
                 </div>
-
+                
+                
             </div>
         </header>
 
